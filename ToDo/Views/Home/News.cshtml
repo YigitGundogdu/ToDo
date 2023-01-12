@@ -1,0 +1,42 @@
+﻿@model ToDo.Models.RootJson
+
+@{
+    ViewBag.Title = "News";
+}
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+<table>
+    @foreach (var station in Model.articles)
+
+    {
+        <tr>
+            <td scope="row">
+                
+                    <label>Başık Bilgisi</label>
+                <p>@station.source.name </p>
+                    <p>@station.title </p>
+    /
+                <div class="form-group col-lg-12">
+                    <label>Açıklama Bilgisi</label>
+                    <p>@station.description</p>
+                </div>
+                <div class="form-group col-lg-12">
+                    <label>Yazar</label>
+                    <p>@station.author</p>
+                </div>
+                <div class="form-group col-lg-12">
+                    <label>İçerik</label>
+                    <p>@station.content</p>
+                </div>
+                <div class="form-group col-lg-12">
+                    <label>Url</label>
+                    <p>@station.url</p>
+                </div>
+
+            </td>
+        </tr>
+    }
+</table>
